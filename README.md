@@ -7,27 +7,27 @@ https://blackrockdigital.github.io/startbootstrap-shop-homepage/
 Fork, clone, install http-server or use live server
 
 ### 2. Building React Components
- * Add some more components to /js/components to help better organize our code.
+ <!-- * Add some more components to /js/components to help better organize our code.
    * ShoppingCart
    * Layout
-   * ProductList
-* Make function components for now
+   * ProductList -->
+<!-- * Make function components for now
 * Make sure to reference each component file in a script tag in index.html in the proper order
-* Make sure to use type="text/babel"
+* Make sure to use type="text/babel" -->
 
 ### 3. Layout & App
-* Cut out all the JSX from App.js and put it into the Layout component as the returned JSX.
+<!-- * Cut out all the JSX from App.js and put it into the Layout component as the returned JSX.
 * Use the Layout Component in App so that it can contain children, `<Layout></Layout>`
 * You will have to piggy back the props down and change references to `this`.
-* Make sure everything still works the same.
+* Make sure everything still works the same. -->
 
 ### 4. ProductList
-* App should not be responsible for mapping products into an array of ProductDetail components
+<!-- * App should not be responsible for mapping products into an array of ProductDetail components
 * ProductList should be responsible for this now.
 * Move the code from App into this component
 * Take prop called products that should be an array of product objects
 * Map the product array into ProductDetail components and show them on the page.
-* Use this component where needed to show the products
+* Use this component where needed to show the products -->
 
 ### 5. ShoppingCart
 * This component's purpose is to show everything that is in the customer's shopping cart.
