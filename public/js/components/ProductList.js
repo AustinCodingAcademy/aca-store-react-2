@@ -14,3 +14,6 @@ function ProductList(props){
         </div>
     )
 }
+
+// Needs products - line 3
+// Needs addItemtoCart() - line 5

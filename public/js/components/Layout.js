@@ -32,3 +32,5 @@ function Layout(props){
             </div>
     )
 }
+
+// Needs whatToShow, shoppingCart, addItemToCart(), products, showCart(), showProducts()

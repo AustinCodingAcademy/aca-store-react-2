@@ -13,3 +13,6 @@ function ShoppingCart(props){
         </div>
     );
 }
+
+// Needs cart - line 3
+// Needs addItemToCart() - line 7

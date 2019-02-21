@@ -27,9 +27,11 @@ class App extends React.Component{
                 products={this.props.products}
                 whatToShow={this.state.whatToShow}
                 showCart={this.showCart}
-                showProducts={this.showProducts}
-            >
+                showProducts={this.showProducts}>
             </Layout>
         );
     }
 }
+
+// Needs products!
+// Sending out state.shoppingCart, addItemToCart(), products, whatToShow, showCart(), showProducts()
