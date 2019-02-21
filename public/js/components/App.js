@@ -1,6 +1,7 @@
 class App extends React.Component {
     state = {
-        shoppingCart: []
+        shoppingCart: [],
+        displayedState: 0
     }
     addItemToCart = (product) => {
         this.setState(() => {
@@ -8,7 +9,19 @@ class App extends React.Component {
             return { shoppingCart: this.state.shoppingCart }
         })
     }
+
+    displayOtherState = (otherState) => {
+        this.setState(() => {
+            return { displayedState: otherState }
+        })
+    }
+
     render() {
-        return <Layout />
+        return <Layout addItemToCart={this.addItemToCart}
+            shoppingCart={this.state.shoppingCart}
+            products={this.props.products}
+            displayOtherState={this.displayOtherState}
+        // whatToShow = {this.state.whatToShow}
+        />
     }
 }

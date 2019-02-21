@@ -1,6 +1,16 @@
 function Layout(props) {
+
+    let content = null;
+    if (props.displayOtherState == 0) {
+        content = <ProductList products={props.products}
+            addItemToCart={props.addItemToCart}
+        />
+    } else if (props.displayOtherState == 1) {
+        content = <ShoppingCart shoppingCart={props.shoppingCart} />
+    }
+
     return (<div className="App">
-        <Header cart={state.shoppingCart} />
+        <Header displayOtherState={props.displayOtherState} cart={state.shoppingCart} />
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
@@ -15,7 +25,7 @@ function Layout(props) {
                 <div className="col-md-9">
                     <Carousel />
                     <div className="row">
-                        {state.productDetails}
+                        {content}
                     </div>
                 </div>
             </div>
