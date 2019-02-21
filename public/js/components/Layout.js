@@ -34,3 +34,6 @@ function Layout(props){
 }
 
 // Needs whatToShow, shoppingCart, addItemToCart(), products, showCart(), showProducts()
+// Sending to ShoppingCart: cart, addItemToCart()
+// Sending to ProductList: products, addItemToCart()
+// Sending to Header: cart, showCart(), showProducts()

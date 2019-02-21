@@ -17,3 +17,4 @@ function ProductList(props){
 
 // Needs products - line 3
 // Needs addItemtoCart() - line 5
+// Sending to ProductDetail: addToCart(), product

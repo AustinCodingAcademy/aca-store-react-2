@@ -16,3 +16,4 @@ function ShoppingCart(props){
 
 // Needs cart - line 3
 // Needs addItemToCart() - line 7
+// Sending to ProductDetail: addtoCart(), product

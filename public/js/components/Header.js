@@ -44,3 +44,4 @@ function Header(props){
 
 // Need showProducts() - line 28
 // Needs cart, showCart() - line 31, 34
+// bottom component

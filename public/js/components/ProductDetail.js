@@ -46,3 +46,4 @@
 
 // Needs product - line 15, 26, 27, 29, 33
 // Needs addToCart() - line 41
+// bottom component
