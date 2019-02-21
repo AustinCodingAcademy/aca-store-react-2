@@ -1,7 +1,7 @@
 #### Intro
 Let's think about what areas of the page should change and which should not. Think about amazon.com. What parts of the page are always in view. Which parts change to show something else.
 
-https://blackrockdigital.github.io/startbootstrap-shop-homepage/
+# Part 1
 
 ### 1. Setup
 Fork, clone, install http-server or use live server
@@ -64,6 +64,13 @@ Fork, clone, install http-server or use live server
 ### Further Thinking
 * What is wrong with the ShoppingCart?
 
+# Part 2. 
+
+### componenDidMount
+* Make the App component have a state key for products which should default to an empty array
+* Add the componenDidMount lifecycle method to App
+* In the componentDidMOunt method make a fetch call to https://acastore.herokuapp.com/products
+* When fetch is done, use setState to load the data into the products array.
 
 
 
