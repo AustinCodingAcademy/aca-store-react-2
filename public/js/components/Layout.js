@@ -1,10 +1,4 @@
 function Layout(props) {
-    const productDetails = state.products.map((p, i) => {
-        return <ProductDetail
-            addToCart={state.addItemToCart}
-            key={i}
-            product={p} />
-    });
     return (<div className="App">
         <Header cart={state.shoppingCart} />
         <div className="container">
@@ -21,7 +15,7 @@ function Layout(props) {
                 <div className="col-md-9">
                     <Carousel />
                     <div className="row">
-                        {productDetails}
+                        {state.productDetails}
                     </div>
                 </div>
             </div>

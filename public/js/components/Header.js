@@ -30,6 +30,9 @@ function Header(props) {
                         <li >
                             <a href="#">Items In Cart ({props.cart.length})</a>
                         </li>
+                        <li>
+                            <a href="#">Checkout</a>
+                        </li>
                     </ul>
                 </div>
 
