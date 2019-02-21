@@ -69,7 +69,7 @@ Fork, clone, install http-server or use live server
 ### ProductList
 * Add some conditional rendering to this component:
 * If the products array is empty, render a message that says "No products available".
-* If the products array is not empty, map the products as normal.
+* If the products array is not empty, render the ProductDetails as normal.
 
 ### componenDidMount
 * Make the App component have a state key for products which should default to an empty array
