@@ -68,6 +68,7 @@ Fork, clone, install http-server or use live server
 
 ### componenDidMount
 * Make the App component have a state key for products which should default to an empty array
+* Pass this state to the props of the child components Layout -> ProductList
 * Add the componenDidMount lifecycle method to App
 * In the componentDidMOunt method make a fetch call to https://acastore.herokuapp.com/products
 * When fetch is done, use setState to load the data into the products array.
