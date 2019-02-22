@@ -49,6 +49,8 @@ Fork, clone, install http-server or use live server
 
 
 ### 8. PropTypes
+* Add the proptypes library to your web app. Include a script tag in the index.html page
+* <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.7.2/prop-types.min.js"></script>
 * Go back and use prop types in all your components
 * We need to be clear on what props each component requires so that we can be sure to provide them
 * Make note of where you are using each component, are you giving it the props that it needs?
