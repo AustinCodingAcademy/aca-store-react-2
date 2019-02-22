@@ -1,7 +1,7 @@
 #### Intro
 Let's think about what areas of the page should change and which should not. Think about amazon.com. What parts of the page are always in view. Which parts change to show something else.
 
-https://blackrockdigital.github.io/startbootstrap-shop-homepage/
+# Part 1
 
 ### 1. Setup
 Fork, clone, install http-server or use live server
@@ -63,9 +63,20 @@ Fork, clone, install http-server or use live server
 
 ### Further Thinking
 * What is wrong with the ShoppingCart?
+* How can this issue be resolved?
 
+# Part 2. 
+### ProductList
+* Add some conditional rendering to this component:
+* If the products array is empty, render a message that says "No products available".
+* If the products array is not empty, render the ProductDetails as normal.
 
-
+### componenDidMount
+* Make the App component have a state key for products which should default to an empty array
+* Pass this state to the props of the child components Layout -> ProductList
+* Add the componenDidMount lifecycle method to App
+* In the componentDidMOunt method make a fetch call to https://acastore.herokuapp.com/products
+* When fetch is done, use setState to load the data into the products array.
 
 
 
