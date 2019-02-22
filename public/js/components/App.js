@@ -46,6 +46,6 @@ class App extends React.Component{
     }
 }
 
-App.PropTypes = {
-    products: PropTypes.array.
+App.propTypes = {
+    products: PropTypes.array.isRequired
 }
