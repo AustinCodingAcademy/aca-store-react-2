@@ -1,6 +1,7 @@
 class App extends React.Component{
    state={
-       shoppingCart:[]
+       shoppingCart:[],
+       thingToShow:0
    }
    addItemToCart = (product)=> {
     this.setState(()=>{
@@ -8,40 +9,27 @@ class App extends React.Component{
         return {shoppingCart:this.state.shoppingCart}
     })
    }
-   render(){
-        const productDetails = this.props.products.map((p,i)=>{
-            return  <ProductDetail 
-            addToCart={this.addItemToCart}
-            key={i} 
-            product={p} />
-        });
-            return (  <div className="App">
-            <Header cart={this.state.shoppingCart}/>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-3">
-                    <p className="lead">Shop Name</p>
-                    <div className="list-group">
-                        <a href="#" className="list-group-item">Category 1</a>
-                        <a href="#" className="list-group-item">Category 2</a>
-                        <a href="#" className="list-group-item">Category 3</a>
-                    </div>
-                </div>
-                {/*comments */}
-                <div className="col-md-9">
-                    <Carousel />
-                    <div className="row">
-                        {productDetails}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container">
 
-            <hr/>
-            <Footer />
-        </div>
-            </div>
-        );
+    changeView = (buttonClicked) =>{
+        this.setState(()=>{
+            return {thingToShow:buttonClicked}
+        })
+    }
+
+   render(){
+        let content = null;
+        if(this.state.thingToShow==0){
+            content = <ProductList products={this.props.products} addItemToCart={this.addItemToCart}/>
+        }else if(this.state.thingToShow==1){
+            content = <ShoppingCart shoppingCart={this.state.shoppingCart} />
+        }
+       return (<Layout shoppingCart={this.state.shoppingCart} 
+       products={this.props.products}
+       addItemToCart={this.addItemToCart}
+       changeView={this.changeView}
+       thingToShow={this.state.thingToShow}
+       >
+       {content}
+       </Layout>)
    }
 }
