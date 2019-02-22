@@ -9,25 +9,47 @@ class App extends React.Component{
             return {shoppingCart:this.state.shoppingCart}
     })
     }
-    showCart = ()=>{
-        this.setState(()=>{
-            return {whatToShow:1}
-        })  
+    // showCart = ()=>{
+    //     this.setState(()=>{
+    //         return {whatToShow:1}
+    //     })  
+    // }
+    // showProducts = ()=>{
+    //     this.setState(()=>{
+    //         return {whatToShow:0}
+    //     })  
+    // }
+    changeView = (view)=>{
+        debugger;
+        this.setState({whatToShow:view})
+
     }
-    showProducts = ()=>{
-        this.setState(()=>{
-            return {whatToShow:0}
-        })  
-    }
+
     render(){
+        debugger;
+        let content = null;
+    if(this.state.whatToShow === 1){
+        content = <ShoppingCart 
+                    cart={this.state.shoppingCart} 
+                    addItemToCart={this.addItemToCart}
+                    />
+    }else if(this.state.whatToShow === 0){
+        content = <ProductList 
+                    products={this.props.products} 
+                    addItemToCart={this.addItemToCart}
+                    />
+    }
         return (  
             <Layout 
                 shoppingCart={this.state.shoppingCart} 
                 addItemToCart={this.addItemToCart}
                 products={this.props.products}
                 whatToShow={this.state.whatToShow}
-                showCart={this.showCart}
-                showProducts={this.showProducts}>
+                changeView={this.changeView}
+                // showCart={this.showCart}
+                // showProducts={this.showProducts}
+                >
+                {content}
             </Layout>
         );
     }

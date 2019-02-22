@@ -25,13 +25,13 @@ function Header(props){
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a href="#" onClick={()=>props.showProducts()}>Products</a>
+                        <a href="#" onClick={()=>props.changeView(0)}>Products</a>
                     </li>
                     <li >
-                        <a href="#" onClick={()=>props.showCart()}>Items In Cart ({props.cart.length})</a>
+                        <a href="#" onClick={()=>props.changeView(1)}>Items In Cart ({props.cart.length})</a>
                     </li>
                     <li >
-                        <button onClick={()=>props.showCart()}>Check it out!</button>
+                        <button onClick={()=>props.changeView(1)}>Check it out!</button>
                     </li>
                 </ul>
             </div>
