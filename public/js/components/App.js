@@ -33,3 +33,7 @@ class App extends React.Component{
         </Layout>)
     }
 }
+
+App.propTypes = {
+    products: PropTypes.array.isRequired
+}

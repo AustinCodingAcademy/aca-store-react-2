@@ -3,3 +3,7 @@ function ShoppingCart(props){
     return <ProductDetail key={index} product={product}/>
   })
 }
+
+ShoppingCart.propTypes = {
+  shoppingCart: PropTypes.array.isRequired
+}

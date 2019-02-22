@@ -41,3 +41,7 @@
         </div>
     </div>);
 }
+
+ProductDetail.propTypes = {
+    product: PropTypes.object.is
+}

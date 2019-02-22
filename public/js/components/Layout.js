@@ -28,3 +28,8 @@ function Layout(props){
       </div>
     );
   }
+
+  Layout.propTypes = {
+    shoppingCart: PropTypes.array.isRequired,
+    changeView: PropTypes.func.isRequired
+  }

@@ -14,3 +14,8 @@ function ProductList(props){
   });
   return productDetails;
 }
+
+ProductList.propTypes = {
+  products: PropTypes.array.isRequired,
+  addItemToCart: PropTypes.func.isRequired
+}

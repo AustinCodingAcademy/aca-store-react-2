@@ -41,3 +41,8 @@ function Header(props){
     </nav>
   );
 }
+
+
+Header.propTypes = {
+    changeView: PropTypes.func.isRequired
+}
