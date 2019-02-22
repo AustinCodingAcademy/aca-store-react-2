@@ -1,10 +1,15 @@
 function ProductList(props){
   const productDetails = props.products.map((p,i)=>{
     return  <ProductDetail 
-    addToCart={props.addItemToCart}
+    addItemToCart={props.addItemToCart}
     key={i} 
-    product={p}>
-    
+    product={p}
+    >
+    <button onClick={()=>
+      {
+          props.addItemToCart(p);
+      }}>Add To Cart
+    </button>
     </ProductDetail>
   });
   return productDetails;
