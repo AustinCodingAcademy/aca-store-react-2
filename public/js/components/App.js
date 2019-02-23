@@ -21,6 +21,7 @@ class App extends React.Component {
             shoppingCart={this.state.shoppingCart}
             products={this.props.products}
             displayOtherState={this.displayOtherState}
+            displayedState={this.state.displayedState}
         // whatToShow = {this.state.whatToShow}
         ></Layout>
     }
