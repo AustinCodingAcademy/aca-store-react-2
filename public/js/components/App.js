@@ -18,10 +18,10 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://acastore.herokuapp.com/products")
-            .then(res => res.json())
-            .then(body => console.log(body));
-    };
+        fetch('https://acastore.herokuapp.com/products')
+            .then(response => response.json())
+            .then(data => this.setState({ products: data }));
+    }
 
     render() {
         let content = []
