@@ -12,6 +12,5 @@ function ProductList(props) {
 
 ProductList.propTypes = {
     addToCart: PropTypes.func.isRequired,
-    key: PropTypes.number.isRequired,
-    product: PropTypes.object.isRequired
+    products: PropTypes.array.isRequired
 }

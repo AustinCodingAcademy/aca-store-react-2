@@ -10,5 +10,5 @@ function ShoppingCart(props) {
 
 ProductDetail.propTypes = {
     shoppingCart: PropTypes.array.isRequired,
-    addItemToCart: PropTypes.func.isRequired
+    addItemToCart: PropTypes.func
 }

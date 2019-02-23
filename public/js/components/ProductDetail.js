@@ -33,7 +33,6 @@ function ProductDetail(props) {
 }
 
 ProductDetail.propTypes = {
-    addToCart: PropTypes.func,
-    key: PropTypes.number.isRequired,
-    product: PropTypes.object.isRequired
+    product: PropTypes.object.isRequired,
+    addToCart: PropTypes.func.isRequired,
 }

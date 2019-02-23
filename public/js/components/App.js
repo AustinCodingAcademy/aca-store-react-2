@@ -17,12 +17,22 @@ class App extends React.Component {
     }
 
     render() {
-        return <Layout addItemToCart={this.addItemToCart}
+        let content = []
+        if (this.state.displayedState == 0) {
+            content = <ProductList products={this.props.products}
+                addToCart={this.addItemToCart}
+            />
+        } else if (this.state.displayedState == 1) {
+            content = <ShoppingCart shoppingCart={this.state.shoppingCart} />
+        } else {
+            content = null;
+        }
+        return <Layout
             shoppingCart={this.state.shoppingCart}
-            products={this.props.products}
             displayOtherState={this.displayOtherState}
-            displayedState={this.state.displayedState}
-        ></Layout>
+        >
+            {content}
+        </Layout>
     }
 }
 
