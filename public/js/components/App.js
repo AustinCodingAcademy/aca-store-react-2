@@ -22,6 +22,6 @@ class App extends React.Component {
             products={this.props.products}
             displayOtherState={this.displayOtherState}
         // whatToShow = {this.state.whatToShow}
-        />
+        ></Layout>
     }
 }

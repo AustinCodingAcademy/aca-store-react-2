@@ -25,7 +25,7 @@ function Layout(props) {
                 <div className="col-md-9">
                     <Carousel />
                     <div className="row">
-                        {content}
+                        <ProductList products={props.products} />
                     </div>
                 </div>
             </div>
