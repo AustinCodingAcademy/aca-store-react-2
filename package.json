@@ -1,0 +1,22 @@
+{
+  "name": "aca-store-react-2",
+  "version": "1.0.0",
+  "description": "Let's think about what areas of the page should change and which should not. Think about amazon.com. What parts of the page are always in view. Which parts change to show something else.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeCurieUs/aca-store-react-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BeCurieUs/aca-store-react-2/issues"
+  },
+  "homepage": "https://github.com/BeCurieUs/aca-store-react-2#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}

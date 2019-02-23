@@ -1,3 +1,8 @@
+Layout.propTypes = {
+    shoppingCart: PropTypes.array.isRequired,
+    changeView: PropTypes.func.isRequired
+}
+
 function Layout(props){
 
   return (  
@@ -27,9 +32,4 @@ function Layout(props){
     </div>
       </div>
     );
-  }
-
-  Layout.propTypes = {
-    shoppingCart: PropTypes.array.isRequired,
-    changeView: PropTypes.func.isRequired
   }

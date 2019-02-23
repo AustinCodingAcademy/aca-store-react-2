@@ -1,3 +1,8 @@
+Header.propTypes = {
+    changeView: PropTypes.func.isRequired,
+    cart: PropTypes.array.isRequired
+}
+
 function Header(props){
     return (
         <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -40,9 +45,4 @@ function Header(props){
       
     </nav>
   );
-}
-
-
-Header.propTypes = {
-    changeView: PropTypes.func.isRequired
 }

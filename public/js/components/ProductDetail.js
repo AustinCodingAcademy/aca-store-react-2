@@ -1,3 +1,7 @@
+ProductDetail.propTypes = {
+    product: PropTypes.object.isRequired
+}
+
 /*
 {
     "id": 1,
@@ -31,7 +35,7 @@
             </div>
             <div className="ratings">
                 <p className="pull-right">
-                {props.product.reviews} reviews</p>
+                {props.product.reviews.length} reviews</p>
                 <p>
                     
                     {star}
@@ -40,8 +44,4 @@
             {props.children}
         </div>
     </div>);
-}
-
-ProductDetail.propTypes = {
-    product: PropTypes.object.isRequired
 }

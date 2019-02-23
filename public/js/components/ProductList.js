@@ -1,3 +1,8 @@
+ProductList.propTypes = {
+  products: PropTypes.array.isRequired,
+  addItemToCart: PropTypes.func.isRequired
+}
+
 function ProductList(props){
   const productDetails = props.products.map((p,i)=>{
     return  <ProductDetail 
@@ -13,9 +18,4 @@ function ProductList(props){
     </ProductDetail>
   });
   return productDetails;
-}
-
-ProductList.propTypes = {
-  products: PropTypes.array.isRequired,
-  addItemToCart: PropTypes.func.isRequired
 }
