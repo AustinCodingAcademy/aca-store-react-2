@@ -2,8 +2,10 @@ function ShoppingCart(props){
     
     const shoppingCartDetails = props.shoppingCart.map((p,i)=>{
         return  <ProductDetail 
-        addToCart={props.addItemToCart}
+        whatToShow = {props.whatToShow}
+        removeFromCart={props.removeFromCart}
         key={i} 
+        productIndex={i}
         product={p} />
     });
 
