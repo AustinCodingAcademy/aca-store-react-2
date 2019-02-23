@@ -17,6 +17,12 @@ class App extends React.Component {
         })
     }
 
+    componentDidMount() {
+        fetch("https://acastore.herokuapp.com/products")
+            .then(res => res.json())
+            .then(body => console.log(body));
+    };
+
     render() {
         let content = []
         if (this.state.displayedState == 0) {
