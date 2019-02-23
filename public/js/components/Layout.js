@@ -7,7 +7,10 @@ function Layout(props) {
         />
     } else if (props.displayedState == 1) {
         content = <ShoppingCart shoppingCart={props.shoppingCart} />
+    } else {
+        content = null;
     }
+
     console.log(content);
     return (<div className="App">
         <Header displayOtherState={props.displayOtherState} cart={props.shoppingCart} />

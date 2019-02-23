@@ -31,7 +31,7 @@ function Header(props) {
                             <a href="#" onClick={() => props.displayOtherState(1)}>Items In Cart ({props.cart.length})</a>
                         </li>
                         <li>
-                            <a href="#">Checkout</a>
+                            <a href="#" onClick={() => props.displayOtherState(2)}>Checkout</a>
                         </li>
                     </ul>
                 </div>
