@@ -36,10 +36,10 @@ Fork, clone, install http-server or use live server
 * Code a button for Checkout -->
 
 ### 6. App
-<!-- * Maintain a piece of state to determine what should be currently show on the page, the list of products or the shopping cart.
+* Maintain a piece of state to determine what should be currently show on the page, the list of products or the shopping cart.
 * Create a method that allows this value of state to be changed and to re render things.
 * Pass this method to the child component that allows the user to change the view, Header
-* Use conditional rendering to decide to show ProductList or ShoppingCart as a child of Layout. Show the ProductList by default. -->
+* Use conditional rendering to decide to show ProductList or ShoppingCart as a child of Layout. Show the ProductList by default.
 
 ### 7. Header
 * Add an onClick to the Products and Items in Cart links
