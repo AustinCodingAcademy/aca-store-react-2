@@ -7,3 +7,8 @@ function ShoppingCart(props) {
     })
     return <div>{shoppingCartItems}</div>
 }
+
+ProductDetail.propTypes = {
+    shoppingCart: PropTypes.array.isRequired,
+    addItemToCart: PropTypes.func.isRequired
+}

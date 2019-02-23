@@ -9,3 +9,9 @@ function ProductList(props) {
 
     return <div>{productDetails}</div>
 }
+
+ProductList.propTypes = {
+    addToCart: PropTypes.func.isRequired,
+    key: PropTypes.number.isRequired,
+    product: PropTypes.object.isRequired
+}

@@ -41,3 +41,8 @@ function Header(props) {
         </nav>
     );
 }
+
+Header.propTypes = {
+    displayOtherState: PropTypes.func.isRequired,
+    cart: PropTypes.array.isRequired
+}

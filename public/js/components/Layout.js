@@ -10,8 +10,6 @@ function Layout(props) {
     } else {
         content = null;
     }
-
-    console.log(content);
     return (<div className="App">
         <Header displayOtherState={props.displayOtherState} cart={props.shoppingCart} />
         <div className="container">
@@ -40,4 +38,12 @@ function Layout(props) {
         </div>
     </div>
     );
+}
+
+Layout.propTypes = {
+    products: PropTypes.array.isRequired,
+    addItemToCart: PropTypes.func.isRequired,
+    shoppingCart: PropTypes.array.isRequired,
+    displayOtherState: PropTypes.func.isRequired,
+    displayedState: PropTypes.array.isRequired
 }
