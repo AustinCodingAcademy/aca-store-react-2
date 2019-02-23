@@ -57,8 +57,8 @@ Fork, clone, install http-server or use live server
 <!-- * Use props.children in the main content area where products are shown instead of showing products -->
 
 ### Make sure
-* Class components are using `this` for props and state
-* Function components are not using `this`
+<!-- * Class components are using `this` for props and state
+* Function components are not using `this` -->
 
 ### Further Thinking
 * What is wrong with the ShoppingCart?
