@@ -38,3 +38,8 @@ function Header(props){
     </nav>
   );
 }
+
+Header.propTypes = {
+    cart: PropTypes.array.isRequired,
+    whatWeSee: PropTypes.number.isRequired
+};

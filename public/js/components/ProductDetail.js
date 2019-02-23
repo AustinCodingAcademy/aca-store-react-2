@@ -10,7 +10,6 @@
   }
   */
  function ProductDetail (props){
-
     let star = [];
     for(let i = 0; i < props.product.rating; i ++){
       star.push(<span key={i} className="glyphicon glyphicon-star"></span>);
@@ -43,3 +42,7 @@
     </div>
 </div>);
 }
+
+ProductDetail.propTypes = {
+    product: PropTypes.object.isRequired
+  };

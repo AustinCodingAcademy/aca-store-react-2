@@ -36,26 +36,25 @@ Fork, clone, install http-server or use live server
 * Code a button for Checkout -->
 
 ### 6. App
-* Maintain a piece of state to determine what should be currently show on the page, the list of products or the shopping cart.
+<!-- * Maintain a piece of state to determine what should be currently show on the page, the list of products or the shopping cart.
 * Create a method that allows this value of state to be changed and to re render things.
 * Pass this method to the child component that allows the user to change the view, Header
-* Use conditional rendering to decide to show ProductList or ShoppingCart as a child of Layout. Show the ProductList by default.
+* Use conditional rendering to decide to show ProductList or ShoppingCart as a child of Layout. Show the ProductList by default. -->
 
 ### 7. Header
-* Add an onClick to the Products and Items in Cart links
+<!-- * Add an onClick to the Products and Items in Cart links
 * Take a prop called changeView that is a function
-* When the links are clicked, call changeView passing in whatever argument is needed to change the view
-
+* When the links are clicked, call changeView passing in whatever argument is needed to change the view -->
 
 
 ### 8. PropTypes
-* Go back and use prop types in all your components
+<!-- * Go back and use prop types in all your components
 * We need to be clear on what props each component requires so that we can be sure to provide them
-* Make note of where you are using each component, are you giving it the props that it needs?
+* Make note of where you are using each component, are you giving it the props that it needs? -->
 
 
 ### 9. Layout
-* Use props.children in the main content area where products are shown instead of showing products
+<!-- * Use props.children in the main content area where products are shown instead of showing products -->
 
 ### Make sure
 * Class components are using `this` for props and state
@@ -63,9 +62,3 @@ Fork, clone, install http-server or use live server
 
 ### Further Thinking
 * What is wrong with the ShoppingCart?
-
-
-
-
-
-

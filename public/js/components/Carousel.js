@@ -1,6 +1,7 @@
+
+
 function Carousel(){
     return(<div className="row carousel-holder">
-       
     <div className="col-md-12">
         <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">

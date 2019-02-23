@@ -14,3 +14,7 @@ function ShoppingCart(props){
     )
 
 }
+
+ShoppingCart.propTypes = {
+    shoppingCart: PropTypes.array.isRequired
+};

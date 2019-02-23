@@ -1,12 +1,4 @@
 function Layout(props){
-    let content = null;
-    if(props.whatToShow == 0){
-        content = <ProductList products={props.products}
-                     addItemToCart={props.addItemToCart}
-                     />
-    } else if(props.whatToShow == 1){
-        content = <ShoppingCart shoppingCart={props.shoppingCart}/>
-    }
     return (<div className="App">
              <Header
              whatWeSee={props.whatWeSee} 
@@ -22,10 +14,10 @@ function Layout(props){
                      </div>
                  </div>
                  {/*comments */}
-                 <div className="col-md-9">
-                     <Carousel />
-                     <div className="row">
-                        {content}
+                    <div className="col-md-9">
+                        <Carousel />
+                    <div className="row">
+                        {props.children}
                     </div>
                  </div>
              </div>
@@ -36,3 +28,8 @@ function Layout(props){
          </div>
              </div>)
 }
+
+Layout.propTypes = {
+    shoppingCart: PropTypes.array.isRequired,
+    whatWeSee: PropTypes.number.isRequired
+};
