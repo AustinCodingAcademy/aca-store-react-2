@@ -1,7 +1,8 @@
 class App extends React.Component {
     state = {
         shoppingCart: [],
-        displayedState: 0
+        displayedState: 0,
+        products: []
     }
     addItemToCart = (product) => {
         this.setState(() => {
@@ -19,9 +20,13 @@ class App extends React.Component {
     render() {
         let content = []
         if (this.state.displayedState == 0) {
-            content = <ProductList products={this.props.products}
-                addToCart={this.addItemToCart}
-            />
+            if (this.state.products.length != 0) {
+                content = <ProductList products={this.state.products}
+                    addToCart={this.addItemToCart}
+                />
+            } else {
+                content = <div>No products available</div>
+            }
         } else if (this.state.displayedState == 1) {
             content = <ShoppingCart shoppingCart={this.state.shoppingCart} />
         } else {
@@ -34,8 +39,4 @@ class App extends React.Component {
             {content}
         </Layout>
     }
-}
-
-App.propTypes = {
-    products: PropTypes.array.isRequired
 }
