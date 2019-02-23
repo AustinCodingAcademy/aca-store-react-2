@@ -1,7 +1,5 @@
 
 ReactDOM.render(
-    <App 
-      products={state.products}
-    />
+    <App />
     ,document.getElementById("root"));
 

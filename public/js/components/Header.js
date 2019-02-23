@@ -42,6 +42,11 @@ function Header(props){
   );
 }
 
+ProductDetail.propTypes = {
+    cart: PropTypes.array.isRequired,
+    changeView: PropTypes.number.isRequired
+};
+
 // Need showProducts() - line 28
 // Needs cart, showCart() - line 31, 34
 // bottom component

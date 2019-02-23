@@ -1,6 +1,7 @@
 class App extends React.Component{
     state={
        shoppingCart:[],
+       products:[],
        whatToShow: 0
     }
     addItemToCart = (product)=> {
@@ -9,45 +10,36 @@ class App extends React.Component{
             return {shoppingCart:this.state.shoppingCart}
     })
     }
-    // showCart = ()=>{
-    //     this.setState(()=>{
-    //         return {whatToShow:1}
-    //     })  
-    // }
-    // showProducts = ()=>{
-    //     this.setState(()=>{
-    //         return {whatToShow:0}
-    //     })  
-    // }
     changeView = (view)=>{
-        debugger;
         this.setState({whatToShow:view})
-
     }
-
+    componentDidMount(){
+        fetch("https://acastore.herokuapp.com/products")
+            .then(r=>r.json())
+            .then(data =>{
+                console.log(data)
+                this.setState({products:data})
+            })
+    }
     render(){
-        debugger;
         let content = null;
-    if(this.state.whatToShow === 1){
-        content = <ShoppingCart 
-                    cart={this.state.shoppingCart} 
-                    addItemToCart={this.addItemToCart}
-                    />
-    }else if(this.state.whatToShow === 0){
-        content = <ProductList 
-                    products={this.props.products} 
-                    addItemToCart={this.addItemToCart}
-                    />
-    }
-        return (  
+        if(this.state.whatToShow === 1){
+            content = <ShoppingCart 
+                        cart={this.state.shoppingCart} 
+                        addItemToCart={this.addItemToCart}
+                        />
+        }else if(this.state.whatToShow === 0){
+            content = <ProductList 
+                        products={this.state.products} 
+                        addItemToCart={this.addItemToCart}
+                        />
+        }
+        return (
             <Layout 
                 shoppingCart={this.state.shoppingCart} 
                 addItemToCart={this.addItemToCart}
-                products={this.props.products}
-                whatToShow={this.state.whatToShow}
+                products={this.state.products}
                 changeView={this.changeView}
-                // showCart={this.showCart}
-                // showProducts={this.showProducts}
                 >
                 {content}
             </Layout>
@@ -55,5 +47,4 @@ class App extends React.Component{
     }
 }
 
-// Needs products!
-// Sending out state.shoppingCart, addItemToCart(), products, whatToShow, showCart(), showProducts()
+// Sending out state.shoppingCart, addItemToCart(), products, whatToShow, changeView()

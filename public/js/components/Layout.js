@@ -1,22 +1,8 @@
 function Layout(props){
-    // let content = null;
-    // if(props.whatToShow === 1){
-    //     content = <ShoppingCart 
-    //                 cart={props.shoppingCart} 
-    //                 addItemToCart={props.addItemToCart}
-    //                 />
-    // }else if(props.whatToShow === 0){
-    //     content = <ProductList 
-    //                 products={props.products} 
-    //                 addItemToCart={props.addItemToCart}
-    //                 />
-    // }
     return(
         <div className="App">
             <Header 
                 cart={props.shoppingCart} 
-                // showCart={props.showCart} 
-                // showProducts={props.showProducts} 
                 changeView={props.changeView}
             />
         <div className="container">
@@ -44,7 +30,12 @@ function Layout(props){
     )
 }
 
-// Needs whatToShow, shoppingCart, addItemToCart(), products, showCart(), showProducts()
+Layout.propTypes ={
+    cart: PropTypes.array.isRequired,
+    changeView: PropTypes.number.isRequired,
+}
+
+// Needs shoppingCart, addItemToCart(), products, changeView()
 // Sending to ShoppingCart: cart, addItemToCart()
 // Sending to ProductList: products, addItemToCart()
 // Sending to Header: cart, showCart(), showProducts()

@@ -10,7 +10,6 @@
   }
   */
  function ProductDetail (props){
-
     let star = [];
     for(let i = 0; i < props.product.rating; i ++){
       star.push(<span key={i} className="glyphicon glyphicon-star"></span>);
@@ -30,7 +29,7 @@
         </div>
         <div className="ratings">
             <p className="pull-right">
-            {props.product.reviews} reviews</p>
+            {props.product.reviews.length} reviews</p>
             <p>
                 
                 {star}
@@ -40,10 +39,10 @@
             //what do we code here
             props.addToCart(props.product);
         }}>Add To Cart</button>
-    </div>
-</div>);
+        </div>
+    </div>);
 }
 
-// Needs product - line 15, 26, 27, 29, 33
-// Needs addToCart() - line 41
-// bottom component
+ProductDetail.propTypes = {
+    products: PropTypes.array.isRequired
+};
