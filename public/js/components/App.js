@@ -26,6 +26,7 @@ class App extends React.Component {
     render() {
         let content = []
         if (this.state.displayedState == 0) {
+            // why do I need .length here???
             if (this.state.products.length != 0) {
                 content = <ProductList products={this.state.products}
                     addToCart={this.addItemToCart}
