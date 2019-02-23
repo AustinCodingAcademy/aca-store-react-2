@@ -10,7 +10,7 @@ function Layout(props) {
     }
 
     return (<div className="App">
-        <Header displayOtherState={props.displayOtherState} cart={state.shoppingCart} />
+        <Header displayOtherState={props.displayOtherState} cart={props.shoppingCart} />
         <div className="container">
             <div className="row">
                 <div className="col-md-3">
@@ -25,7 +25,8 @@ function Layout(props) {
                 <div className="col-md-9">
                     <Carousel />
                     <div className="row">
-                        <ProductList products={props.products} />
+                        <ProductList products={props.products}
+                            addToCart={props.addItemToCart} />
                     </div>
                 </div>
             </div>
