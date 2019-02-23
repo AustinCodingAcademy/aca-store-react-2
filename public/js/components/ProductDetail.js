@@ -43,5 +43,5 @@
 }
 
 ProductDetail.propTypes = {
-    product: PropTypes.object.is
+    product: PropTypes.object.isRequired
 }

@@ -1,5 +1,6 @@
 class App extends React.Component{
    state={
+       products:[],
        shoppingCart:[],
        thingToShow:0
    }
@@ -16,10 +17,24 @@ class App extends React.Component{
         })
     }
 
+    componentDidMount = () => {
+        // fetch('https://acastore.herokuapp.com/products')
+        //     .then(res => res.json())
+        //     .then(json => console.log(json));
+
+    }
+
+
+
     render(){
         let content = null;
         if(this.state.thingToShow==0){
-            content = <ProductList products={this.props.products} addItemToCart={this.addItemToCart}/>
+            
+            if(this.props.products){
+                content = <ProductList products={this.props.products} addItemToCart={this.addItemToCart}/>
+            }else{
+                content = <p>No products available</p>
+            }
         }else if(this.state.thingToShow==1){
             content = <ShoppingCart shoppingCart={this.state.shoppingCart} />
         }
