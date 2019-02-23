@@ -25,10 +25,13 @@ function Header(props){
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a href="#">Products</a>
+                        <a href="#" onClick={()=>props.changeView(0)}>Products</a>
                     </li>
                     <li >
-                        <a href="#">Items In Cart ({props.cart.length})</a>
+                        <a href="#" onClick={()=>props.changeView(1)}>Items In Cart ({props.cart.length})</a>
+                    </li>
+                    <li >
+                        <button onClick={()=>props.changeView(1)}>Check it out!</button>
                     </li>
                 </ul>
             </div>
@@ -38,3 +41,12 @@ function Header(props){
     </nav>
   );
 }
+
+ProductDetail.propTypes = {
+    cart: PropTypes.array.isRequired,
+    changeView: PropTypes.number.isRequired
+};
+
+// Need showProducts() - line 28
+// Needs cart, showCart() - line 31, 34
+// bottom component
