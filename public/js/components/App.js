@@ -13,7 +13,6 @@ class App extends React.Component{
         this.setState(()=>{
             return {whatToShow:changedState}
         })
-        console.log(changedState)
     }
    render(){
        return <Layout addItemToCart={this.addItemToCart}
