@@ -1,47 +1,55 @@
 class App extends React.Component{
    state={
-       shoppingCart:[]
+       shoppingCart:[],
+       isOn: true,
+       products: []
    }
-   addItemToCart = (product)=> {
-    this.setState(()=>{
-        this.state.shoppingCart.push(product);
-        return {shoppingCart:this.state.shoppingCart}
-    })
-   }
-   render(){
-        const productDetails = this.props.products.map((p,i)=>{
-            return  <ProductDetail 
-            addToCart={this.addItemToCart}
-            key={i} 
-            product={p} />
-        });
-            return (  <div className="App">
-            <Header cart={this.state.shoppingCart}/>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-3">
-                    <p className="lead">Shop Name</p>
-                    <div className="list-group">
-                        <a href="#" className="list-group-item">Category 1</a>
-                        <a href="#" className="list-group-item">Category 2</a>
-                        <a href="#" className="list-group-item">Category 3</a>
-                    </div>
-                </div>
-                {/*comments */}
-                <div className="col-md-9">
-                    <Carousel />
-                    <div className="row">
-                        {productDetails}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container">
 
-            <hr/>
-            <Footer />
-        </div>
-            </div>
-        );
+   addItemToCart = (product)=> {
+        this.setState(()=>{
+            this.state.shoppingCart.push(product);
+            return {shoppingCart:this.state.shoppingCart}
+        })
+    }
+
+    changeView = (val) => {
+        this.setState({isOn: val})
    }
+
+   componentDidMount = () => {
+    fetch('https://acastore.herokuapp.com/products')
+        .then(res => res.json())
+        .then(json => {
+            this.setState( () => {
+                json.forEach(obj => {
+                    this.state.products.push(obj)
+                });
+                return {products: this.state.products}
+            })
+        });
+   }
+
+   render() {
+       let list = null;
+       let carousel = null;
+
+       if (this.state.isOn) {
+           list = <ProductList products={this.state.products} addItemToCart={this.addItemToCart} />
+           carousel = <Carousel />
+       } else {
+           list = <ShoppingCart shoppingCart={this.state.shoppingCart} />
+       }
+
+       return (
+           <Layout
+               shoppingCart={this.state.shoppingCart} changeView={this.changeView}>
+               {carousel}
+               {list}
+           </Layout>
+       )
+    }
+}
+
+App.propTypes = {
+    products: PropTypes.array.isRequired
 }

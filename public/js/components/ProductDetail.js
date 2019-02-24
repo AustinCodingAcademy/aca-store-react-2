@@ -30,7 +30,7 @@
         </div>
         <div className="ratings">
             <p className="pull-right">
-            {props.product.reviews} reviews</p>
+            {props.product.reviews.length} reviews</p>
             <p>
                 
                 {star}
@@ -42,4 +42,16 @@
         }}>Add To Cart</button>
     </div>
 </div>);
+}
+
+ProductDetail.propTypes = {
+    product: PropTypes.shape({
+        name: PropTypes.string,
+        description: PropTypes.string,
+        reviews: PropTypes.string.isRequired,
+        rating: PropTypes.number
+        .isRequired,
+        price: PropTypes.string
+    }),
+    addToCart: PropTypes.func
 }

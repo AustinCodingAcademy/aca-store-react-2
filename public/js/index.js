@@ -1,8 +1,3 @@
 
-ReactDOM.render(
-    <App 
-      numberOfItemsInCart = {state.numberOfItemsInCart}
-      products={state.products}
-    />
-    ,document.getElementById("root"));
+ReactDOM.render(<App />,document.getElementById("root"));
 
