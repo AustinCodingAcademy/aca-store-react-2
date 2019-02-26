@@ -1,16 +1,5 @@
-/*
-{
-    "id": 1,
-    "name": "Body Luxuries Sweet Lavender Hand Sanitizer",
-    "description": "Cleans your hands",
-    "reviews": 46,
-    "rating": 2,
-    "imgUrl": "http://dummyimage.com/136x167.bmp/cc0000/ffffff",
-    "price": "$95.11"
-  }
-  */
- function ProductDetail (props){
-
+function ProductDetail (props){
+    
     let star = [];
     for(let i = 0; i < props.product.rating; i ++){
       star.push(<span key={i} className="glyphicon glyphicon-star"></span>);
@@ -42,4 +31,9 @@
         }}>Add To Cart</button>
     </div>
 </div>);
+}
+
+ProductDetail.propTypes = {
+    product: PropTypes.object.isRequired,
+    addToCart: PropTypes.func.isRequired
 }
