@@ -1,4 +1,5 @@
 function Header(props){
+
     return (
         <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
@@ -25,16 +26,21 @@ function Header(props){
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a href="#">Products</a>
+                        <a href="#" onClick={() => {props.changeView(true)}}>Products</a>
                     </li>
                     <li >
-                        <a href="#">Items In Cart ({props.cart.length})</a>
+                        <a href="#" onClick={() => {props.changeView(false)}}>Items In Cart ({props.cart.length})</a>
                     </li>
                 </ul>
-            </div>
-         
+            </div>         
         </div>
       
     </nav>
   );
 }
+
+Header.propTypes = {
+    cart: PropTypes.number.isRequired,
+    changeView: PropTypes.func.isRequired
+}
+
