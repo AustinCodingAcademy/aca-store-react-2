@@ -1,3 +1,4 @@
+
 #### Intro
 Let's think about what areas of the page should change and which should not. Think about amazon.com. What parts of the page are always in view. Which parts change to show something else.
 
