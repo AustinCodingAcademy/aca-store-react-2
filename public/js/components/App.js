@@ -4,6 +4,13 @@ class App extends React.Component{
        products:[],
        whatToShow: 0
    }
+
+   componentDidMount(){
+        fetch('https://acastore.herokuapp.com/products')
+        .then(r => r.json())
+        .then(products => this.setState({products}))
+   }
+
    addItemToCart = (product)=> {
     this.setState(()=>{
         this.state.shoppingCart.push(product);
