@@ -1,7 +1,8 @@
 function Layout (props) {
     return (<div className="App">
         <Header 
-        cart={props.shoppingCart}/>
+        cart={props.shoppingCart}
+        whatWeSee={props.whatWeSee}/>
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
