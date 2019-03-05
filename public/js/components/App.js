@@ -11,18 +11,14 @@ class App extends React.Component{
     })
    }
    render(){
-        const productDetails = this.props.products.map((p,i)=>{
-            return  <ProductDetail 
-            addToCart={this.addItemToCart}
-            key={i} 
-            product={p} />
-        });
+        
    }
    return(  
         <Layout
             shoppingCart={this.state.shoppingCart}
             products={this.state.products}
             addItemToCart={this.addItemToCart}
+            whatToShow={this.state.whatToShow}
             >
             
         </Layout>

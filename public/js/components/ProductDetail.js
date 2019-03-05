@@ -1,14 +1,3 @@
-/*
-{
-    "id": 1,
-    "name": "Body Luxuries Sweet Lavender Hand Sanitizer",
-    "description": "Cleans your hands",
-    "reviews": 46,
-    "rating": 2,
-    "imgUrl": "http://dummyimage.com/136x167.bmp/cc0000/ffffff",
-    "price": "$95.11"
-  }
-  */
  function ProductDetail (props){
 
     let star = [];
@@ -17,6 +6,17 @@
     }
     let emptystars = []
     emptystars.push(<span class="glyphicon glyphicon-star-empty"></span>)
+
+    let buttonContent = null;
+    if(props.whatToShow == 0){
+        buttonContent = <button onClick = {()=>{
+            props.addToCart(props.product);
+        }}>Add To Cart</button>
+    } else if (props.whatToShow == 1){
+        buttonContent = <button onClick = {()=>{
+            props.removeFromCart(props.productIndex);
+        }}>Remove from Cart</button>
+    };
 
     return ( <div className="col-sm-4 col-lg-4 col-md-4">
     <div className="thumbnail">
@@ -40,6 +40,7 @@
             //what do we code here
             props.addToCart(props.product);
         }}>Add To Cart</button>
+        {buttonContent}
     </div>
 </div>);
 }

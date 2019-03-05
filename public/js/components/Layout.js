@@ -1,6 +1,7 @@
 function Layout (props) {
     return (<div className="App">
-        <Header cart={this.state.shoppingCart}/>
+        <Header 
+        cart={props.shoppingCart}/>
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
