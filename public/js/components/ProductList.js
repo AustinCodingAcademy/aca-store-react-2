@@ -14,3 +14,7 @@ function ProductList (props) {
         </div>
     )
 }
+
+ProductList.propTypes = {
+    products: PropTypes.object.isRequired
+};

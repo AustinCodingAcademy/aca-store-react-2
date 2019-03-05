@@ -3,7 +3,9 @@ function ShoppingCart (props) {
         return <ProductDetail
             key={i}
             product={p}
+            productIndex={i}
             whatToShow={props.whatToShow}
+            removeFromCart={props.removeFromCart}
         />
     });
     
@@ -13,3 +15,7 @@ function ShoppingCart (props) {
         </div>
     )
 }
+
+ShoppingCart.propTypes = {
+    shoppingCart: PropTypes.array.isRequired
+};

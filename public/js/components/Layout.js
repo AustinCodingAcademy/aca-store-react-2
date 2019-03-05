@@ -17,7 +17,7 @@ function Layout (props) {
                         <div className="col-md-9">
                             <Carousel />
                         <div className="row">
-                            {productDetails}
+                            {props.children}
                         </div>
                     </div>
                 </div>
@@ -29,3 +29,8 @@ function Layout (props) {
         </div>
     </div>)
 }
+
+Layout.propTypes = {
+    shoppingCart: PropTypes.array.isRequired,
+    whatWeSee: PropTypes.number.isRequired
+};

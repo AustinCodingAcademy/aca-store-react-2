@@ -30,23 +30,25 @@ class App extends React.Component{
        } else if(this.state.whatToShow == 1){
            if(this.state.shoppingCart.length > 0){
                content = <ShoppingCart shoppingCart = {this.state.shoppingCart}
-               removeItemFromCart={this.removeItemFromCart}
+               removeFromCart={this.removeFromCart}
                whatToShow={this.state.whatToShow}/>
            }else{
-               content=<h1>Cart is empty</h1>
+               content=<h1>Cart is empty.</h1>
            }
        }
    
-   return(  
-        <Layout
+   return <Layout
             shoppingCart={this.state.shoppingCart}
             products={this.state.products}
             addItemToCart={this.addItemToCart}
             whatToShow={this.state.whatToShow}
             whatWeSee={this.whatWeSee}
             >
-            
+          {content}  
         </Layout>
-   );
    }
+}
+
+App.propTypes = {
+    products: PropTypes.array
 }
