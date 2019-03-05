@@ -9,7 +9,7 @@
     "price": "$95.11"
   }
   */
- function ProductDetail (props){
+function ProductDetail (props){
 
     let star = [];
     for(let i = 0; i < props.product.rating; i ++){
@@ -17,6 +17,17 @@
     }
     let emptystars = []
     emptystars.push(<span class="glyphicon glyphicon-star-empty"></span>)
+
+    let buttonContent = null;
+    if(props.whatToShow == 0){
+        buttonContent = <button onClick = {()=>{
+            props.addToCart(props.product);
+        }}>Add To Cart</button>
+    } else if (props.whatToShow == 1){
+        buttonContent = <button onClick = {()=>{
+            props.removeFromCart(props.productIndex);
+        }}>Remove from Cart</button>
+    };
 
     return ( <div className="col-sm-4 col-lg-4 col-md-4">
     <div className="thumbnail">
@@ -30,7 +41,7 @@
         </div>
         <div className="ratings">
             <p className="pull-right">
-            {props.product.reviews} reviews</p>
+            {props.product.reviews.length} reviews</p>
             <p>
                 
                 {star}
@@ -40,6 +51,11 @@
             //what do we code here
             props.addToCart(props.product);
         }}>Add To Cart</button>
+        {buttonContent}
     </div>
 </div>);
 }
+
+ProductDetail.propTypes = {
+    product:PropTypes.object.isRequired
+};

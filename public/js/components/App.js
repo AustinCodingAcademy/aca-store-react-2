@@ -1,47 +1,61 @@
 class App extends React.Component{
    state={
-       shoppingCart:[]
+       shoppingCart:[],
+       products:[],
+       whatToShow: 0
    }
+
+   componentDidMount(){
+        fetch('https://acastore.herokuapp.com/products')
+        .then(r => r.json())
+        .then(products => this.setState({products}))
+   }
+
    addItemToCart = (product)=> {
     this.setState(()=>{
         this.state.shoppingCart.push(product);
         return {shoppingCart:this.state.shoppingCart}
     })
    }
-   render(){
-        const productDetails = this.props.products.map((p,i)=>{
-            return  <ProductDetail 
-            addToCart={this.addItemToCart}
-            key={i} 
-            product={p} />
-        });
-            return (  <div className="App">
-            <Header cart={this.state.shoppingCart}/>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-3">
-                    <p className="lead">Shop Name</p>
-                    <div className="list-group">
-                        <a href="#" className="list-group-item">Category 1</a>
-                        <a href="#" className="list-group-item">Category 2</a>
-                        <a href="#" className="list-group-item">Category 3</a>
-                    </div>
-                </div>
-                {/*comments */}
-                <div className="col-md-9">
-                    <Carousel />
-                    <div className="row">
-                        {productDetails}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container">
-
-            <hr/>
-            <Footer />
-        </div>
-            </div>
-        );
+   removeItemFromCart = (productKey)=> {
+    this.setState(()=>{
+        this.state.shoppingCart.splice(productKey, (productKey + 1));
+        return {shoppingCart:this.state.shoppingCart}
+    })
    }
+   whatWeSee = (changedState)=>{
+       this.setState(()=>{
+           return {whatToShow:changedState}
+       })
+   }
+   render(){
+       let content = null;
+       if(this.state.whatToShow == 0){
+           content = <ProductList products = {this.state.products}
+            addItemToCart={this.addItemToCart}
+            whatToShow={this.state.whatToShow}/>
+       } else if(this.state.whatToShow == 1){
+           if(this.state.shoppingCart.length > 0){
+               content = <ShoppingCart shoppingCart = {this.state.shoppingCart}
+               removeFromCart={this.removeFromCart}
+               whatToShow={this.state.whatToShow}/>
+           }else{
+               content=<h1>Cart is empty.</h1>
+           }
+       }
+   
+   return <Layout
+            shoppingCart={this.state.shoppingCart}
+            products={this.state.products}
+            addItemToCart={this.addItemToCart}
+            whatToShow={this.state.whatToShow}
+            whatWeSee={this.whatWeSee}
+            >
+          {content}  
+        </Layout>
+   }
+}
+
+App.propTypes = {
+    products: PropTypes.array
 }

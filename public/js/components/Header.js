@@ -25,10 +25,10 @@ function Header(props){
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a href="#">Products</a>
+                        <a href="#" onClick={()=> props.whatWeSee(0)}>Products</a>
                     </li>
                     <li >
-                        <a href="#">Items In Cart ({props.cart.length})</a>
+                        <a href="#" onClick={()=> props.whatWeSee(1)}>Items In Cart ({props.cart.length})</a>
                     </li>
                 </ul>
             </div>
@@ -38,3 +38,8 @@ function Header(props){
     </nav>
   );
 }
+
+Header.propTypes = {
+    cart:PropTypes.array.isRequired,
+    whatWeSee:PropTypes.number.isRequired
+};
