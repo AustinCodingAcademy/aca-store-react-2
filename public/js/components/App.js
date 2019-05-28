@@ -1,47 +1,40 @@
 class App extends React.Component{
-   state={
-       shoppingCart:[]
-   }
-   addItemToCart = (product)=> {
-    this.setState(()=>{
-        this.state.shoppingCart.push(product);
-        return {shoppingCart:this.state.shoppingCart}
-    })
-   }
-   render(){
-        const productDetails = this.props.products.map((p,i)=>{
-            return  <ProductDetail 
-            addToCart={this.addItemToCart}
-            key={i} 
-            product={p} />
-        });
-            return (  <div className="App">
-            <Header cart={this.state.shoppingCart}/>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-3">
-                    <p className="lead">Shop Name</p>
-                    <div className="list-group">
-                        <a href="#" className="list-group-item">Category 1</a>
-                        <a href="#" className="list-group-item">Category 2</a>
-                        <a href="#" className="list-group-item">Category 3</a>
-                    </div>
-                </div>
-                {/*comments */}
-                <div className="col-md-9">
-                    <Carousel />
-                    <div className="row">
-                        {productDetails}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container">
+    state={
+        shoppingCart:[],
+        displayed: 'products'
+    }
 
-            <hr/>
-            <Footer />
-        </div>
-            </div>
+    addItemToCart = (product)=> {
+        this.setState(()=>{
+            this.state.shoppingCart.push(product);
+            return {shoppingCart:this.state.shoppingCart}
+        })
+    }
+
+    viewCart = () => {
+        this.setState({displayed: 'cart'});
+        console.log(this.state.displayed);
+    }
+
+    viewProducts = () => {
+        this.setState({displayed: 'products'});
+        console.log(this.state.displayed);
+    }
+
+    render(){
+        let toDisplay;
+        if(this.state.displayed === 'products') {
+            toDisplay = <ProductList addItemToCart={this.addItemToCart} products={this.props.products} />
+        }
+        else if(this.state.displayed === 'cart') {
+            toDisplay = <ShoppingCart shoppingCart={this.state.shoppingCart}/>
+
+        }
+        
+        return (  
+            <Layout shoppingCart={this.state.shoppingCart} viewCart={this.viewCart} viewProducts={this.viewProducts}>
+                {toDisplay}
+            </Layout>
         );
-   }
+    }
 }
