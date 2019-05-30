@@ -1,47 +1,42 @@
+
 class App extends React.Component{
    state={
-       shoppingCart:[]
+       shoppingCart:[],
+       showProducts: "ProductList",
+       products: []
    }
+   
    addItemToCart = (product)=> {
     this.setState(()=>{
         this.state.shoppingCart.push(product);
         return {shoppingCart:this.state.shoppingCart}
     })
    }
-   render(){
-        const productDetails = this.props.products.map((p,i)=>{
-            return  <ProductDetail 
-            addToCart={this.addItemToCart}
-            key={i} 
-            product={p} />
-        });
-            return (  <div className="App">
-            <Header cart={this.state.shoppingCart}/>
-        <div className="container">
-            <div className="row">
-                <div className="col-md-3">
-                    <p className="lead">Shop Name</p>
-                    <div className="list-group">
-                        <a href="#" className="list-group-item">Category 1</a>
-                        <a href="#" className="list-group-item">Category 2</a>
-                        <a href="#" className="list-group-item">Category 3</a>
-                    </div>
-                </div>
-                {/*comments */}
-                <div className="col-md-9">
-                    <Carousel />
-                    <div className="row">
-                        {productDetails}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container">
+   changeView = (showString) => {
+       if (showString === "cart") {
+           this.setState({showProducts: "ShoppingCart"})
+       } else if (showString === "products") {
+           this.setState({showProducts: "ProductList"})
+       }
+   }
+   componentDidMount() {
+       fetch('https://acastore.herokuapp.com/products').then((result)=>result.json()).then((data)=>{
+           this.setState({products: data})
+           console.log("products are: "+data)
+       })
 
-            <hr/>
-            <Footer />
-        </div>
-            </div>
-        );
+   }
+   render(){
+       let whatToRender;
+       if (this.state.showProducts === "ProductList") {
+             whatToRender = <ProductList  products={this.state.products} addItemToCart={this.addItemToCart}/>
+            
+       } else if (this.state.showProducts === "ShoppingCart") { 
+             whatToRender = <ShoppingCart cart={this.state.shoppingCart} addItemToCart={this.addItemToCart}/>
+            
+       }
+       return <Layout changeView={this.changeView} state={this.state}> 
+                {whatToRender}
+            </Layout>
    }
 }

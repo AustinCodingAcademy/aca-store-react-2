@@ -24,10 +24,10 @@ function Header(props){
                     <li>
                         <a href="#">Contact</a>
                     </li>
-                    <li>
+                    <li onClick={() => props.changeView("products")}>
                         <a href="#">Products</a>
                     </li>
-                    <li >
+                    <li onClick={() => props.changeView("cart")}>
                         <a href="#">Items In Cart ({props.cart.length})</a>
                     </li>
                 </ul>
@@ -38,3 +38,4 @@ function Header(props){
     </nav>
   );
 }
+
