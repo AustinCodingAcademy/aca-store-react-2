@@ -38,3 +38,7 @@ function Header(props){
     </nav>
   );
 }
+
+Header.propTypes = {
+    viewCart: PropTypes.func
+}

@@ -35,3 +35,9 @@ function Layout(props) {
         </div>
     )
 }
+
+Layout.propTypes = {
+    shoppingCart: PropTypes.array,
+    products: PropTypes.array,
+    container: PropTypes.node
+}

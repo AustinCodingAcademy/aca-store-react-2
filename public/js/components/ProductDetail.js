@@ -43,3 +43,12 @@
     </div>
 </div>);
 }
+
+ProductDetail.propTypes = {
+    rating: PropTypes.number,
+    price: PropTypes.string,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    reviews: PropTypes.number,
+    addToCart: PropTypes.func
+}

@@ -14,3 +14,9 @@ function ShoppingCart(props) {
         </div>
     )
 }
+
+ShoppingCart.propTypes = {
+    addToCart: PropTypes.func,
+    cartItem: PropTypes.node,
+    shoppingCart: PropTypes.array
+}

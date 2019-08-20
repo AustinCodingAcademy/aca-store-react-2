@@ -12,3 +12,9 @@ function ProductList(props) {
         </div>
     )
 }
+
+ProductList.propTypes = {
+    addToCart: PropTypes.func,
+    productDetails: PropTypes.node,
+    products: PropTypes.array
+}

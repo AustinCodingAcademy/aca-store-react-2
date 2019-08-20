@@ -29,3 +29,11 @@ class App extends React.Component{
             />;
    }
 }
+
+App.propTypes = {
+    shoppingCart: PropTypes.array,
+    products: PropTypes.array,
+    addToCart: PropTypes.func,
+    viewCart: PropTypes.func,
+    listCart: PropTypes.bool
+}
