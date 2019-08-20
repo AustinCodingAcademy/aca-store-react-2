@@ -1,9 +1,4 @@
 function Layout(props) {
-    let display = props.listCart;
-    let container = null;
-    display ? container = <ProductList products={props.products} addToCart={props.addToCart}/>
-            : container = <ShoppingCart shoppingCart={props.shoppingCart} addToCart={props.addToCart}/>
-
     return (
         <div className="App">
             <Header 
@@ -23,7 +18,7 @@ function Layout(props) {
                     {/*comments */}
                     <div className="col-md-9">
                         <Carousel />
-                        {container}
+                        {props.children}
                     </div>
                 </div>
             </div>
@@ -39,5 +34,5 @@ function Layout(props) {
 Layout.propTypes = {
     shoppingCart: PropTypes.array,
     products: PropTypes.array,
-    container: PropTypes.node
+    children: PropTypes.element,
 }

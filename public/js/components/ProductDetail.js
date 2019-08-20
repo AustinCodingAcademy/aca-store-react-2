@@ -23,16 +23,18 @@
         <img src="http://placehold.it/320x150" alt=""/>
         <div className="caption">
             <h4 className="pull-right">
-            {props.product.price}</h4>
-            <h4><a href="#">{props.product.name}</a>
+            {props.product.price}
+            </h4>
+            <h4>
+                <a href="#">{props.product.name}</a>
             </h4>
             <p>{props.product.description}</p>
         </div>
         <div className="ratings">
             <p className="pull-right">
-            {props.product.reviews} reviews</p>
-            <p>
-                
+                {props.product.reviews.length} reviews
+            </p>
+            <p> 
                 {star}
             </p>
         </div>
@@ -45,6 +47,7 @@
 }
 
 ProductDetail.propTypes = {
+    product: PropTypes.object,
     rating: PropTypes.number,
     price: PropTypes.string,
     name: PropTypes.string,
