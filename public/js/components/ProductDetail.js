@@ -1,14 +1,4 @@
-/*
-{
-    "id": 1,
-    "name": "Body Luxuries Sweet Lavender Hand Sanitizer",
-    "description": "Cleans your hands",
-    "reviews": 46,
-    "rating": 2,
-    "imgUrl": "http://dummyimage.com/136x167.bmp/cc0000/ffffff",
-    "price": "$95.11"
-  }
-  */
+
  function ProductDetail (props){
 
     let star = [];
@@ -30,16 +20,19 @@
         </div>
         <div className="ratings">
             <p className="pull-right">
-            {props.product.reviews} reviews</p>
+            {props.product.reviews.length} reviews</p>
             <p>
                 
                 {star}
             </p>
         </div>
         <button onClick={()=>{
-            //what do we code here
             props.addToCart(props.product);
         }}>Add To Cart</button>
     </div>
 </div>);
 }
+
+ProductDetail.propTypes = {
+    product: PropTypes.object.isRequired,
+    addToCart: PropTypes.func.isRequired}
