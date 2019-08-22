@@ -10,7 +10,6 @@
   }
   */
  function ProductDetail (props){
-
     let star = [];
     for(let i = 0; i < props.product.rating; i ++){
       star.push(<span key={i} className="glyphicon glyphicon-star"></span>);
@@ -36,8 +35,8 @@
                 {star}
             </p>
         </div>
-        <button onClick={()=>{
-            //what do we code here
+        <button onClick={(e)=>{
+            e.preventDefault();
             props.addToCart(props.product);
         }}>Add To Cart</button>
     </div>
