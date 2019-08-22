@@ -1,7 +1,7 @@
 function Layout(props) {
     return (
         <div className="App">
-            <Header cart={this.state.shoppingCart} />
+            <Header cart={props.cart} />
             <div className="container">
                 <div className="row">
                     <div className="col-md-3">
@@ -15,9 +15,7 @@ function Layout(props) {
                     {/*comments */}
                     <div className="col-md-9">
                         <Carousel />
-                        <div className="row">
-                            {productDetails}
-                        </div>
+                        
                     </div>
                 </div>
             </div>
