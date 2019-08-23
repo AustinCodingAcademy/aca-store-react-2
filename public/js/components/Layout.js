@@ -2,7 +2,7 @@
 function Layout(props){
     return(
     <div>
-        <Header cart={props.cart}/>
+        <Header changeView={props.changeView} cart={props.cart}/>
         <div className="container">
             <div className="row">
                 <div className="col-md-3">

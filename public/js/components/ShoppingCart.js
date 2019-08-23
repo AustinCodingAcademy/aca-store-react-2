@@ -1,8 +1,13 @@
 
 function ShoppingCart(props){
-    return(
-        <div>
-            {props.cart}
-        </div>
-    )
+    const prodDetails = props.products.map((p,i)=>{
+        return  <ProductDetail 
+        key={i} 
+        product={p} />
+    });
+return(
+    <div>
+        {prodDetails}
+    </div>
+)
 }

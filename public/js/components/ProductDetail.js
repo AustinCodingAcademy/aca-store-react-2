@@ -31,7 +31,6 @@
             <p className="pull-right">
             {props.product.reviews} reviews</p>
             <p>
-                
                 {star}
             </p>
         </div>
