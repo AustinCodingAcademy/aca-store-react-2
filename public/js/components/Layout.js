@@ -17,7 +17,7 @@ function Layout(props){
                 <div className="col-md-9">
                     <Carousel />
                     <div className="row">
-                    <ProductList products={props.products} addToCart={props.addToCart}/>
+                    <ProductList products={props.products} addToCart={props.addToCart} cart={props.cart}/>
                     </div>
                 </div>
             </div>

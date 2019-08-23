@@ -3,8 +3,11 @@ class App extends React.Component{
        shoppingCart:[],
        products:[
            {name:"Hand Lotion", price:"$10.50"},
-           {name:"Lip Scrub", price:"$1.50"},
-           {name:"Body Scrub", price:"$18.00"}
+           {name:"Lip Scrub", price:"$4.50"},
+           {name:"Body Scrub", price:"$12.00"},
+           {name:"Mint Toothpast", price:"$3.00"},
+           {name:"Puppy Shampoo", price:"$9.00"},
+           {name:"Room Spray", price:"$11.90"},
     ],
     whatToShow: 1
    }
