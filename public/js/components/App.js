@@ -2,15 +2,24 @@ class App extends React.Component{
    state={
        shoppingCart:[],
        products:[
-           {name:"Hand Lotion", price:"$10.50"},
-           {name:"Lip Scrub", price:"$4.50"},
-           {name:"Body Scrub", price:"$12.00"},
-           {name:"Mint Toothpast", price:"$3.00"},
-           {name:"Puppy Shampoo", price:"$9.00"},
-           {name:"Room Spray", price:"$11.90"},
+           {name:"Body Wash", description:"A nice product. Try it.", price:"$10.00"},
+           {name:"Lip Scrub", description:"Good product. Try it.", price:"$8.40"},
+           {name:"Puppy Shampoo", description:"Its toothpast-yadda", price:"$11.90"},
+           {name:"Mint Toothpast",description:"Sweet product. Try it.", price:"$9.90"},
+           {name:"Hand Lotion",description:"A so-so product- it works.", price:"$12.50"}
     ],
     whatToShow: 1
    }
+
+   /*componentDidMount(){
+    fetch("https://acastore.herokuapp.com/products")
+      .then((res)=>res.json())
+      .then((products)=> {
+        this.setState({products})
+      })
+      .catch(err=> console.log("Error Occured:" + (err)))
+    }*/
+
    addItemToCart = (product)=> {
     this.setState(()=>{
         this.state.shoppingCart.push(product);

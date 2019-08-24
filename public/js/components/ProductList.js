@@ -1,6 +1,6 @@
 
 function ProductList(props){
-    const productDetails = props.products.map((p,i)=>{
+    let productDetails = props.products.map((p,i)=>{
             return  <ProductDetail 
             addToCart={props.addToCart}
             key={i} 
