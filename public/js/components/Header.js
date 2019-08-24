@@ -30,6 +30,12 @@ function Header(props){
                     <li >
                         <a href="#">Items In Cart ({props.cart.length})</a>
                     </li>
+                    <li >
+                        <a href="#" onClick={(e)=>{
+                            e.preventDefault();
+                            props.changeView(2)
+                                }}>View Cart</a>
+                    </li>
                 </ul>
             </div>
          
